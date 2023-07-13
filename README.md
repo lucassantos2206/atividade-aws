@@ -84,5 +84,5 @@ UDP personalizado	UDP	2049	0.0.0.0/0	NFS
 
 Como onfigurar o NFS com o IP fornecido
 Criei um novo diretório para o NFS usando o comando sudo mkdir /mnt/nfs.
-Montei o NFS no diretório criado usando o comando sudo mount IP_OU_DNS_DO_NFS:/ /mnt/nfs.
+Montei o NFS no diretório criado usando o comando sudo mount -t nfs4 -o nfsvers=4.1...
 Verifiquei se o NFS foi montado usando o comando df -h.
