@@ -30,23 +30,24 @@
 # Execução da atividade
 - Gerar uma chave pública de acesso na AWS e anexá-la a uma nova instância EC2.
 - Acesse a AWS na pagina do serviço EC2, e clique em "Pares de chaves" no menu lateral esquerdo.
-Clique em "Criar par de chaves".
-Insira um nome para a chave e clique em "Criar par de chaves".
-Salve o arquivo .pem gerado em um seguro local.
-Clique em "Instâncias" no menu lateral esquerdo.
-Clique em "Executar instâncias".
-Configure as Tags da instância (Name, Project e CostCenter) para instâncias e volumes.
-selecione a imagem Amazon Linux 2 AMI (HVM), SSD Volume Type.
-selecione o tipo de instância t3.small.
-selecione a chave gerada anteriormente.
-Coloque 16 GB de armazenamento gp2 (SSD).
-Clique em "Executar instância".
-Alocar um endereço IP elástico à instância EC2.
-Acesse a AWS na pagina do serviço EC2, e clique em "IPs elásticos" no menu lateral esquerdo.
-Clique em "Alocar endereço IP elástico".
-selecione o ip alocado e clique em "Ações" > "Associar endereço IP elástico".
-selecione a instância EC2 criada anteriormente e clique em "Associar".
-Configurar gateway de internet.
+- Clique em "Criar par de chaves".
+- Insira um nome para a chave e clique em "Criar par de chaves".
+- Salve o arquivo .pem gerado em um seguro local.
+- Clique em "Instâncias" no menu lateral esquerdo.
+- Clique em "Executar instâncias".
+- Configure as Tags da instância (Name, Project e CostCenter) para instâncias e volumes.
+- Selecione a imagem Amazon Linux 2 AMI (HVM), SSD Volume Type.
+- Selecione o tipo de instância t3.small.
+- Selecione a chave gerada anteriormente.
+- Coloque 16 GB de armazenamento gp2 (SSD).
+- Clique em "Executar instância".
+- Alocar um endereço IP elástico à instância EC2.
+- Acesse a AWS na pagina do serviço EC2, e clique em "IPs elásticos" no menu lateral esquerdo.
+- Clique em "Alocar endereço IP elástico".
+- Selecione o ip alocado e clique em "Ações" > "Associar endereço IP elástico".
+- Selecione a instância EC2 criada anteriormente e clique em "Associar".
+
+* Configurar gateway de internet.
 Acesse a AWS na pagina do serviço VPC, e clique em "Gateways de internet" no menu lateral esquerdo.
 Clique em "Criar gateway de internet".
 Defina um nome para o gateway e clique em "Criar gateway de internet".
