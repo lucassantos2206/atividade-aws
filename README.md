@@ -6,29 +6,30 @@
 
 # Requisitos
 
-# Instância AWS:
+- Instância AWS:
 - Chave pública para acesso ao ambiente
 - AmazonLinux 2
-t3.small
-SSD de 16 GB
-1 Elastic IP associado a instância
-Portas de comunicação liberadas
-22/TCP (SSH)
-111/TCP e UDP (RPC)
-2049/TCP/UDP (NFS)
-80/TCP (HTTP)
-443/TCP (HTTPS)
-ConfiguraçõesLinux:
-Configurar o NFS entregue;
-Crie um diretório dentro do filesystem do NFS com seu nome;
-Subir um apache no servidor - o apache deve estar online e rodando;
-Crie um script que valide se o serviço esta online e envie o resultado da validação para o seu diretório no nfs;
-O script deve conter - Data HORA + nome do serviço + Status + mensagem personalizada de ONLINE ou offline;
-O script deve gerar 2 arquivos de saida: 1 para o serviço online e 1 para o serviço OFFLINE;
-Execução automatizada do script a cada 5 minutos.
-Instruções de Execução
-Gerar uma chave pública de acesso na AWS e anexá-la a uma nova instância EC2.
-Acesse a AWS na pagina do serviço EC2, e clique em "Pares de chaves" no menu lateral esquerdo.
+- t3.small
+- SSD de 16 GB
+- 1 Elastic IP associado a instância
+- Portas de comunicação liberadas
+- 22/TCP (SSH)
+- 111/TCP e UDP (RPC)
+- 2049/TCP/UDP (NFS)
+- 80/TCP (HTTP)
+- 443/TCP (HTTPS)
+- ConfiguraçõesLinux:
+- Configurar o NFS entregue;
+- Crie um diretório dentro do filesystem do NFS com seu nome;
+- Subir um apache no servidor - o apache deve estar online e rodando;
+- Crie um script que valide se o serviço esta online e envie o resultado da validação para o seu diretório no nfs;
+- O script deve conter - Data HORA + nome do serviço + Status + mensagem personalizada de ONLINE ou offline;
+- O script deve gerar 2 arquivos de saida: 1 para o serviço online e 1 para o serviço OFFLINE;
+- Execução automatizada do script a cada 5 minutos.
+
+# Instruções de Execução
+- Gerar uma chave pública de acesso na AWS e anexá-la a uma nova instância EC2.
+- Acesse a AWS na pagina do serviço EC2, e clique em "Pares de chaves" no menu lateral esquerdo.
 Clique em "Criar par de chaves".
 Insira um nome para a chave e clique em "Criar par de chaves".
 Salve o arquivo .pem gerado em um seguro local.
