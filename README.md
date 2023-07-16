@@ -47,48 +47,49 @@
 - Selecione o ip alocado e clique em "Ações" > "Associar endereço IP elástico".
 - Selecione a instância EC2 criada anteriormente e clique em "Associar".
 
-* Configurar gateway de internet.
-Acesse a AWS na pagina do serviço VPC, e clique em "Gateways de internet" no menu lateral esquerdo.
-Clique em "Criar gateway de internet".
-Defina um nome para o gateway e clique em "Criar gateway de internet".
-selecione o gateway criado e clique em "Ações" > "Associar à VPC".
-selecione a VPC da instância EC2 criada anteriormente e clique em "Associar".
-Configurar rota de internet.
-Acesse a AWS na pagina do serviço VPC, e clique em "Tabelas de rotas" no menu lateral esquerdo.
-selecione a tabela de rotas da VPC da instância EC2 criada anteriormente.
-Clique em "Ações" > "Editar escalas".
-Clique em "Adicionar rota".
-Configure da seguinte forma:
-Destino: 0.0.0.0/0
-Alvo: selecione o gateway de internet criado anteriormente
-Clique em "Salvar alterações".
-Configurar regras de segurança.
-Acesse a AWS na página do serviço EC2, e clique em "Segurança" > "Grupos de segurança" no menu lateral esquerdo.
-selecione o grupo de segurança da instância EC2 criada anteriormente.
-Clique em "Editar regras de entrada".
-Configure as seguintes regras:
-Tipo	Protocolo	Intervalo de portas	origem	Descrição
-SSH	TCP	22	0.0.0.0/0	SSH
-TCP personalizado	TCP	80	0.0.0.0/0	HTTP
-TCP personalizado	TCP	443	0.0.0.0/0	HTTPS
-TCP personalizado	TCP	111	0.0.0.0/0	RPC
-UDP personalizado	UDP	111	0.0.0.0/0	RPC
-TCP personalizado	TCP	2049	0.0.0.0/0	NFS
-UDP personalizado	UDP	2049	0.0.0.0/0	NFS
-Configurar o NFS com o IP fornecido
-Crie um novo diretório para o NFS usando o comando sudo mkdir /mnt/nfs.
-Montar o NFS no diretório criado usando o comando sudo mount IP_OU_DNS_DO_NFS:/ /mnt/nfs.
-Verifique se o NFS foi montado usando o comando df -h.
-Configure o NFS para montar automaticamente no boot usando o comando sudo nano /etc/fstab.
-Adicione a seguinte linha no arquivo /etc/fstab:
-IP_OU_DNS_DO_NFS:/ /mnt/nfs nfs defaults 0 0
-Salvar o arquivo /etc/fstab.
-Crie um novo diretório para o usuário alexlopes usando o comando sudo mkdir /mnt/nfs/alexlopes.
-Configurar o Apache.
-Executar o comando sudo yum update -ypara atualizar o sistema.
-Execute o comando sudo yum install httpd -ypara instalar o apache.
-Execute o comando sudo systemctl start httpdpara iniciar o apache.
-Execute o comando sudo systemctl enable httpdpara habilitar o apache para iniciar automaticamente.
-Execute o comando sudo systemctl status httpdpara verificar o status do apache.
-Configurações adicionais do apache podem ser feitas no arquivo /etc/httpd/conf/httpd.conf.
-para parar o apache, executar o comando sudo systemctl stop httpd.
+- Configurar gateway de internet.
+- Acesse a AWS na pagina do serviço VPC, e clique em "Gateways de internet" no menu lateral esquerdo.
+- Clique em "Criar gateway de internet".
+- Defina um nome para o gateway e clique em "Criar gateway de internet".
+- Selecione o gateway criado e clique em "Ações" > "Associar à VPC".
+- Selecione a VPC da instância EC2 criada anteriormente e clique em "Associar".
+
+- Configurar rota de internet.
+- Acesse a AWS na pagina do serviço VPC, e clique em "Tabelas de rotas" no menu lateral esquerdo.
+- Selecione a tabela de rotas da VPC da instância EC2 criada anteriormente.
+- Clique em "Ações" > "Editar escalas".
+- Clique em "Adicionar rota".
+- Configure da seguinte forma:
+- Destino: 0.0.0.0/0
+- Alvo: selecione o gateway de internet criado anteriormente
+- Clique em "Salvar alterações".
+- Configurar regras de segurança.
+- Acesse a AWS na página do serviço EC2, e clique em "Segurança" > "Grupos de segurança" no menu lateral esquerdo.
+- Selecione o grupo de segurança da instância EC2 criada anteriormente.
+- Clique em "Editar regras de entrada".
+- Configure as seguintes regras:
+- Tipo	Protocolo	Intervalo de portas	origem	Descrição
+- SSH	TCP	22	0.0.0.0/0	SSH
+- TCP personalizado	TCP	80	0.0.0.0/0	HTTP
+- TCP personalizado	TCP	443	0.0.0.0/0	HTTPS
+- TCP personalizado	TCP	111	0.0.0.0/0	RPC
+- UDP personalizado	UDP	111	0.0.0.0/0	RPC
+- TCP personalizado	TCP	2049	0.0.0.0/0	NFS
+- UDP personalizado	UDP	2049	0.0.0.0/0	NFS
+- Configurar o NFS com o IP fornecido
+- Crie um novo diretório para o NFS usando o comando sudo mkdir /mnt/nfs.
+- Montar o NFS no diretório criado usando o comando sudo mount IP_OU_DNS_DO_NFS:/ /mnt/nfs.
+- Verifique se o NFS foi montado usando o comando df -h.
+- Configure o NFS para montar automaticamente no boot usando o comando sudo nano /etc/fstab.
+- Adicione a seguinte linha no arquivo /etc/fstab:
+- IP_OU_DNS_DO_NFS:/ /mnt/nfs nfs defaults 0 0
+- Salvar o arquivo /etc/fstab.
+- Crie um novo diretório para o usuário alexlopes usando o comando sudo mkdir /mnt/nfs/SeuNome.
+- Configurar o Apache.
+- Executar o comando sudo yum update -ypara atualizar o sistema.
+- Execute o comando sudo yum install httpd -ypara instalar o apache.
+- Execute o comando sudo systemctl start httpdpara iniciar o apache.
+- Execute o comando sudo systemctl enable httpdpara habilitar o apache para iniciar automaticamente.
+- Execute o comando sudo systemctl status httpdpara verificar o status do apache.
+- Configurações adicionais do apache podem ser feitas no arquivo /etc/httpd/conf/httpd.conf.
+- Para parar o apache, executar o comando sudo systemctl stop httpd.
