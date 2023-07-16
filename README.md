@@ -7,7 +7,7 @@
 # Requisitos
 Instância AWS:
 - Chave pública para acesso ao ambiente
-AmazonLinux 2
+- AmazonLinux 2
 t3.small
 SSD de 16 GB
 1 Elastic IP associado a instância
