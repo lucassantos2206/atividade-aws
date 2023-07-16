@@ -27,7 +27,7 @@
 - O script deve gerar 2 arquivos de saida: 1 para o serviço online e 1 para o serviço OFFLINE;
 - Execução automatizada do script a cada 5 minutos.
 
-# Instruções de Execução
+# Execução da atividade
 - Gerar uma chave pública de acesso na AWS e anexá-la a uma nova instância EC2.
 - Acesse a AWS na pagina do serviço EC2, e clique em "Pares de chaves" no menu lateral esquerdo.
 Clique em "Criar par de chaves".
