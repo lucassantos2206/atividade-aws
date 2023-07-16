@@ -5,7 +5,8 @@
 - Escopo : A atividade incluirá a geração de uma chave pública de acesso, criação de uma instância EC2 com o sistema operacional Amazon Linux 2, geração de um endereço IP elástico e anexá-lo à instância EC2, saída de portas de comunicação para acesso público, configuração do NFS, criação de um diretório com o nome do usuário no filesystem do NFS, instalação e configuração do Apache, criação de um script para validar se o serviço está online e enviar o resultado para o diretório NFS, e configuração da execução automatizada do script a cada 5 minutos.
 
 # Requisitos
-Instância AWS:
+
+# Instância AWS:
 - Chave pública para acesso ao ambiente
 - AmazonLinux 2
 t3.small
